@@ -1,0 +1,104 @@
+:root {
+  /* Brand and surfaces */
+  --brand-navy-950: #04122b;
+  --brand-navy-900: #081b3d;
+  --brand-navy-800: #0c2a56;
+  --brand-champagne-500: #d8b58c;
+  --brand-champagne-600: #c9a16f;
+  --brand-gold-text: #775025;
+  --surface-canvas: #f8f6f2;
+  --surface-primary: #ffffff;
+  --surface-muted: #f0ece6;
+  --text-primary: #081b3d;
+  --text-secondary: #526077;
+  --border-default: #d7d2ca;
+  --focus-ring: #8a5c1f;
+
+  /* Semantic states remain independent from the brand palette. */
+  --semantic-success: #176b4d;
+  --semantic-success-surface: #e8f4ee;
+  --semantic-warning: #8a5c1f;
+  --semantic-warning-surface: #fbf1df;
+  --semantic-info: #235789;
+  --semantic-info-surface: #e8f0f8;
+  --semantic-danger: #b42318;
+  --semantic-danger-surface: #fbeae8;
+
+  /* Typography */
+  --type-font-product: var(--font-manrope), "Segoe UI", sans-serif;
+  --type-font-display: var(--font-unbounded), var(--type-font-product);
+  --font-size-supporting: 0.875rem;
+  --font-size-body: 1rem;
+  --font-size-lead: 1.125rem;
+  --line-height-tight: 1.2;
+  --line-height-body: 1.6;
+  --letter-spacing-display: -0.025em;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --content-gutter: clamp(1rem, 4vw, 2.5rem);
+  --content-max-width: 90rem;
+  --public-header-height: 4rem;
+  --public-header-height-desktop: 5.875rem;
+  --mobile-nav-height: 4.5rem;
+
+  /* Shape and elevation */
+  --shape-radius-sm: 0.25rem;
+  --shape-radius-md: 0.5rem;
+  --shape-radius-lg: 0.75rem;
+  --shape-radius-pill: 999px;
+  --elevation-sticky: 0 8px 24px rgb(4 18 43 / 10%);
+  --elevation-overlay: 0 24px 64px rgb(4 18 43 / 18%);
+
+  /* Motion */
+  --motion-fast: 160ms;
+  --motion-standard: 200ms;
+  --motion-slow: 240ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --public-header-height: var(--public-header-height-desktop);
+  }
+}
+
+@theme inline {
+  --color-brand-navy-950: var(--brand-navy-950);
+  --color-brand-navy-900: var(--brand-navy-900);
+  --color-brand-navy-800: var(--brand-navy-800);
+  --color-brand-champagne-500: var(--brand-champagne-500);
+  --color-brand-champagne-600: var(--brand-champagne-600);
+  --color-brand-gold-text: var(--brand-gold-text);
+  --color-surface-canvas: var(--surface-canvas);
+  --color-surface-primary: var(--surface-primary);
+  --color-surface-muted: var(--surface-muted);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border-default: var(--border-default);
+  --color-focus-ring: var(--focus-ring);
+  --color-semantic-success: var(--semantic-success);
+  --color-semantic-success-surface: var(--semantic-success-surface);
+  --color-semantic-warning: var(--semantic-warning);
+  --color-semantic-warning-surface: var(--semantic-warning-surface);
+  --color-semantic-info: var(--semantic-info);
+  --color-semantic-info-surface: var(--semantic-info-surface);
+  --color-semantic-danger: var(--semantic-danger);
+  --color-semantic-danger-surface: var(--semantic-danger-surface);
+  --font-sans: var(--type-font-product);
+  --font-display: var(--type-font-display);
+  --radius-sm: var(--shape-radius-sm);
+  --radius-md: var(--shape-radius-md);
+  --radius-lg: var(--shape-radius-lg);
+  --shadow-sticky: var(--elevation-sticky);
+  --shadow-overlay: var(--elevation-overlay);
+}

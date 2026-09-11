@@ -1,0 +1,100 @@
+import type { Lang } from "@/context/LangSwitch";
+
+const labels: Record<Lang, Record<string, string>> = {
+  uz: {
+    ACTIVE: "Faol", APPROVED: "Tasdiqlangan", ARCHIVED: "Arxivlangan", AVAILABLE: "Mavjud",
+    BLOCKED: "Bloklangan", CANCELED: "Bekor qilingan", CANCELLED: "Bekor qilingan",
+    COMPLETED: "Yakunlangan", DECLINED: "Rad etilgan", DISABLED: "O‘chirilgan", DRAFT: "Qoralama",
+    EXPIRED: "Muddati tugagan", FAILED: "Muvaffaqiyatsiz", IN_REVIEW: "Tekshiruvda",
+    FINISHED: "Yakunlangan", LIVE: "Jonli", PAID: "To‘langan", PENDING: "Kutilmoqda",
+    PENDING_PAYMENT: "To‘lov kutilmoqda", PENDING_REVIEW: "Tekshiruvda", PUBLISHED: "E’lon qilingan",
+    REJECTED: "Rad etilgan", SCHEDULED: "Rejalashtirilgan", SIGNED: "Imzolangan", SOLD: "Sotilgan",
+    MODERATION: "Moderatsiyada", NOT_SUBMITTED: "Yuborilmagan", SUBMITTED: "Yuborilgan",
+    AUKSION: "Auksion", AUCTION_APPROVED: "Auksion tasdiqlandi", KYC_DOCUMENT_UPLOADED: "KYC hujjati yuklandi", NEW_MATCH: "Yangi moslik",
+    USER_DOCUMENT: "Foydalanuvchi hujjati", VEHICLEDOCUMENT: "Transport hujjati", VEHICLE_DOCUMENT: "Transport hujjati",
+    SUCCESS: "Muvaffaqiyatli", UNKNOWN: "Noma’lum", VERIFIED: "Tasdiqlangan",
+    PASSPORT: "Pasport", ID_CARD: "ID karta", ORG_CERTIFICATE: "Tashkilot guvohnomasi",
+    AUTHORIZATION: "Ishonchnoma", VEHICLE_REGISTRATION: "Transport ro‘yxatdan o‘tganlik guvohnomasi",
+    TECHNICAL_PASSPORT: "Texnik pasport", OWNERSHIP_DOCUMENT: "Egalik hujjati",
+    REGISTRATION: "Ro‘yxatdan o‘tganlik guvohnomasi", INSURANCE: "Sug‘urta hujjati",
+    TECHNICAL_INSPECTION: "Texnik ko‘rik hujjati", CUSTOMS_DECLARATION: "Bojxona deklaratsiyasi",
+    PETROL: "Benzin", DIESEL: "Dizel", GAS: "Gaz", HYBRID: "Gibrid", ELECTRIC: "Elektr",
+    MANUAL: "Mexanik", AUTOMATIC: "Avtomatik", CVT: "Variator", ROBOT: "Robot",
+    FWD: "Old uzatma", RWD: "Orqa uzatma", AWD: "To‘liq uzatma", "4WD": "To‘liq uzatma",
+    SEDAN: "Sedan", SUV: "Krossover", HATCHBACK: "Xetchbek", WAGON: "Universal",
+    COUPE: "Kupe", PICKUP: "Pikap", VAN: "Furgon", MINIVAN: "Miniven",
+    NEW: "Yangi", EXCELLENT: "A’lo", GOOD: "Yaxshi", FAIR: "Qoniqarli", DAMAGED: "Shikastlangan",
+    FIXED: "Belgilangan summa", PERCENTAGE: "Foiz", STRING: "Matn", INTEGER: "Butun son",
+    BOOLEAN: "Ha/Yo‘q", DATE: "Sana", DATETIME: "Sana va vaqt", TIME: "Vaqt",
+    PURCHASE_ORDER: "Xarid buyurtmasi", SALE: "Sotuv", PURCHASE: "Xarid", REFUND: "Qaytarish",
+    DEPOSIT: "Depozit", PAYMENT: "To‘lov", BID: "Taklif", BUYER: "Xaridor", SELLER: "Sotuvchi",
+    INDIVIDUAL: "Jismoniy shaxs", ORGANIZATION: "Tashkilot", LEGAL_ENTITY: "Yuridik shaxs",
+  },
+  en: {
+    ACTIVE: "Active", APPROVED: "Approved", ARCHIVED: "Archived", AVAILABLE: "Available",
+    BLOCKED: "Blocked", CANCELED: "Canceled", CANCELLED: "Canceled", COMPLETED: "Completed",
+    DECLINED: "Declined", DISABLED: "Disabled", DRAFT: "Draft", EXPIRED: "Expired", FAILED: "Failed",
+    FINISHED: "Finished", IN_REVIEW: "In review", LIVE: "Live", MODERATION: "In moderation",
+    AUKSION: "Auction", AUCTION_APPROVED: "Auction approved", KYC_DOCUMENT_UPLOADED: "KYC document uploaded", NEW_MATCH: "New match",
+    USER_DOCUMENT: "User document", VEHICLEDOCUMENT: "Vehicle document", VEHICLE_DOCUMENT: "Vehicle document",
+    PAID: "Paid", PENDING: "Pending", PENDING_PAYMENT: "Payment pending", PENDING_REVIEW: "In review",
+    PUBLISHED: "Published", REJECTED: "Rejected", SCHEDULED: "Scheduled", SIGNED: "Signed",
+    NOT_SUBMITTED: "Not submitted", SOLD: "Sold", SUBMITTED: "Submitted", SUCCESS: "Successful",
+    UNKNOWN: "Unknown", VERIFIED: "Verified",
+    PASSPORT: "Passport", ID_CARD: "ID card", ORG_CERTIFICATE: "Organization certificate",
+    AUTHORIZATION: "Authorization", VEHICLE_REGISTRATION: "Vehicle registration certificate",
+    TECHNICAL_PASSPORT: "Technical passport", OWNERSHIP_DOCUMENT: "Ownership document",
+    REGISTRATION: "Registration certificate", INSURANCE: "Insurance document",
+    TECHNICAL_INSPECTION: "Technical inspection document", CUSTOMS_DECLARATION: "Customs declaration",
+    PETROL: "Petrol", DIESEL: "Diesel", GAS: "Gas", HYBRID: "Hybrid", ELECTRIC: "Electric",
+    MANUAL: "Manual", AUTOMATIC: "Automatic", CVT: "CVT", ROBOT: "Automated manual",
+    FWD: "Front-wheel drive", RWD: "Rear-wheel drive", AWD: "All-wheel drive", "4WD": "Four-wheel drive",
+    SEDAN: "Sedan", SUV: "SUV", HATCHBACK: "Hatchback", WAGON: "Wagon", COUPE: "Coupe",
+    PICKUP: "Pickup", VAN: "Van", MINIVAN: "Minivan", NEW: "New", EXCELLENT: "Excellent",
+    GOOD: "Good", FAIR: "Fair", DAMAGED: "Damaged", FIXED: "Fixed amount", PERCENTAGE: "Percentage",
+    STRING: "Text", INTEGER: "Integer", BOOLEAN: "Yes/No", DATE: "Date", DATETIME: "Date and time",
+    TIME: "Time", PURCHASE_ORDER: "Purchase order", SALE: "Sale", PURCHASE: "Purchase",
+    REFUND: "Refund", DEPOSIT: "Deposit", PAYMENT: "Payment", BID: "Bid", BUYER: "Buyer", SELLER: "Seller",
+    INDIVIDUAL: "Individual", ORGANIZATION: "Organization", LEGAL_ENTITY: "Legal entity",
+  },
+  ru: {
+    ACTIVE: "Активно", APPROVED: "Одобрено", ARCHIVED: "В архиве", AVAILABLE: "Доступно",
+    BLOCKED: "Заблокировано", CANCELED: "Отменено", CANCELLED: "Отменено", COMPLETED: "Завершено",
+    DECLINED: "Отклонено", DISABLED: "Отключено", DRAFT: "Черновик", EXPIRED: "Истёк",
+    FAILED: "Ошибка", FINISHED: "Завершено", IN_REVIEW: "На проверке", LIVE: "Активный",
+    PAID: "Оплачено", PENDING: "Ожидает", PENDING_PAYMENT: "Ожидает оплаты", PENDING_REVIEW: "На проверке",
+    PUBLISHED: "Опубликовано", REJECTED: "Отклонено", SCHEDULED: "Запланировано", SIGNED: "Подписано",
+    MODERATION: "На модерации", NOT_SUBMITTED: "Не отправлено", SOLD: "Продано",
+    AUKSION: "Аукцион", AUCTION_APPROVED: "Аукцион одобрен", KYC_DOCUMENT_UPLOADED: "KYC документ загружен", NEW_MATCH: "Новое совпадение",
+    USER_DOCUMENT: "Документ пользователя", VEHICLEDOCUMENT: "Документ транспорта", VEHICLE_DOCUMENT: "Документ транспорта",
+    SUBMITTED: "Отправлено", SUCCESS: "Успешно", UNKNOWN: "Неизвестно", VERIFIED: "Подтверждено",
+    PASSPORT: "Паспорт", ID_CARD: "ID-карта", ORG_CERTIFICATE: "Свидетельство организации",
+    AUTHORIZATION: "Доверенность", VEHICLE_REGISTRATION: "Свидетельство о регистрации автомобиля",
+    TECHNICAL_PASSPORT: "Технический паспорт", OWNERSHIP_DOCUMENT: "Документ о праве собственности",
+    REGISTRATION: "Свидетельство о регистрации", INSURANCE: "Страховой документ",
+    TECHNICAL_INSPECTION: "Документ техосмотра", CUSTOMS_DECLARATION: "Таможенная декларация",
+    PETROL: "Бензин", DIESEL: "Дизель", GAS: "Газ", HYBRID: "Гибрид", ELECTRIC: "Электрический",
+    MANUAL: "Механическая", AUTOMATIC: "Автоматическая", CVT: "Вариатор", ROBOT: "Робот",
+    FWD: "Передний привод", RWD: "Задний привод", AWD: "Полный привод", "4WD": "Полный привод",
+    SEDAN: "Седан", SUV: "Кроссовер", HATCHBACK: "Хэтчбек", WAGON: "Универсал", COUPE: "Купе",
+    PICKUP: "Пикап", VAN: "Фургон", MINIVAN: "Минивэн", NEW: "Новый", EXCELLENT: "Отличное",
+    GOOD: "Хорошее", FAIR: "Удовлетворительное", DAMAGED: "Повреждённое", FIXED: "Фиксированная сумма",
+    PERCENTAGE: "Процент", STRING: "Текст", INTEGER: "Целое число", BOOLEAN: "Да/Нет", DATE: "Дата",
+    DATETIME: "Дата и время", TIME: "Время", PURCHASE_ORDER: "Заказ на закупку", SALE: "Продажа",
+    PURCHASE: "Закупка", REFUND: "Возврат", DEPOSIT: "Депозит", PAYMENT: "Платёж", BID: "Ставка",
+    BUYER: "Покупатель", SELLER: "Продавец", INDIVIDUAL: "Физическое лицо",
+    ORGANIZATION: "Организация", LEGAL_ENTITY: "Юридическое лицо",
+  },
+};
+
+export function backendEnumKey(value: unknown): string {
+  return typeof value === "string"
+    ? value.trim().replace(/([a-z0-9])([A-Z])/g, "$1_$2").replace(/[\s-]+/g, "_").toUpperCase()
+    : "";
+}
+
+export function translateBackendValue(value: unknown, lang: Lang, fallback = "—"): string {
+  const key = backendEnumKey(value);
+  if (!key) return fallback;
+  return labels[lang][key] ?? String(value).replace(/_/g, " ");
+}

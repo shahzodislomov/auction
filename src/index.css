@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+* {
+  font-family: "Quicksand", serif !important;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+@layer base {
+  button,
+  [role="button"],
+  [role="tab"],
+  [role="option"],
+  [role="menuitem"],
+  [onclick],
+  [onClick],
+  a,
+  select,
+  summary,
+  input[type="submit"],
+  input[type="button"],
+  input[type="checkbox"],
+  input[type="radio"],
+  input[type="file"] {
+    @apply cursor-pointer;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  input[type="submit"]:not(:disabled),
+  input[type="button"]:not(:disabled) {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  button:not(:disabled):hover,
+  [role="button"]:not([aria-disabled="true"]):hover,
+  input[type="submit"]:not(:disabled):hover,
+  input[type="button"]:not(:disabled):hover {
+    @apply opacity-95 shadow-sm;
+  }
+
+  button:not(:disabled):active,
+  [role="button"]:not([aria-disabled="true"]):active,
+  input[type="submit"]:not(:disabled):active,
+  input[type="button"]:not(:disabled):active {
+    @apply scale-[0.985];
+  }
+
+  button:disabled,
+  input:disabled,
+  select:disabled,
+  textarea:disabled,
+  [aria-disabled="true"] {
+    @apply cursor-not-allowed opacity-60;
+  }
+}
+
+/* --bg-color: #0f172a;
+     --acc-color: #334155;
+     --txt-color: #64748b;
+     --heading: #cbd5e1; */
+
+
+small {
+  left: calc(50% - 50px);
+}
+
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.intro-image {
+  z-index: 99999;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  animation: slideOut .5s ease-out forwards;
+  animation-delay: 2s;
+  background: #fff;
+}
+
+.intro-image img {
+  animation: moveUp 2s ease-out forwards;
+}
+
+.loginCompo {
+  background-image: url(https://plus.unsplash.com/premium_photo-1658506826316-f21670ec809e?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-repeat: no-repeat;
+  background-position: center 20px 0;
+  background-size: cover;
+}
+
+.timerComp {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 0 3em;
+  text-align: center;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.css-8fykvn-MuiMultiSectionDigitalClock-root .MuiMultiSectionDigitalClockSection-root::-webkit-scrollbar {
+  display: none;
+}
+
+.css-8fykvn-MuiMultiSectionDigitalClock-root .MuiMultiSectionDigitalClockSection-root {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -1,0 +1,219 @@
+@import "tailwindcss";
+@import "../design-system/tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 20rem;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--public-header-height) + var(--space-4));
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--surface-canvas);
+  color: var(--text-primary);
+  font-family: var(--type-font-product);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:not([class*="text-"]) {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* Universal interactive cursor rules & micro-interactions */
+a,
+button,
+summary,
+select,
+label[for],
+[role="button"],
+[role="tab"],
+[role="option"],
+[role="menuitem"],
+[tabindex="0"],
+[onclick],
+[onClick],
+[data-clickable="true"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+input[type="checkbox"],
+input[type="radio"],
+input[type="file"] {
+  cursor: pointer;
+}
+
+:disabled,
+[aria-disabled="true"],
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  cursor: not-allowed !important;
+}
+
+button:not(:disabled),
+a:not([aria-disabled="true"]),
+[role="button"]:not([aria-disabled="true"]),
+input[type="submit"]:not(:disabled),
+input[type="button"]:not(:disabled) {
+  transition: background-color var(--motion-fast) var(--ease-standard),
+              color var(--motion-fast) var(--ease-standard),
+              border-color var(--motion-fast) var(--ease-standard),
+              box-shadow var(--motion-fast) var(--ease-standard),
+              transform var(--motion-fast) var(--ease-standard),
+              opacity var(--motion-fast) var(--ease-standard);
+}
+
+button:not(:disabled):hover,
+[role="button"]:not([aria-disabled="true"]):hover,
+input[type="submit"]:not(:disabled):hover,
+input[type="button"]:not(:disabled):hover {
+  filter: brightness(1.04);
+}
+
+button:not(:disabled):active,
+[role="button"]:not([aria-disabled="true"]):active,
+input[type="submit"]:not(:disabled):active,
+input[type="button"]:not(:disabled):active {
+  transform: scale(0.985);
+}
+
+button:not([class*="text-"]),
+input:not([class*="text-"]),
+select:not([class*="text-"]),
+textarea:not([class*="text-"]) {
+  color: inherit;
+}
+
+input:not([class*="border-"]),
+select:not([class*="border-"]),
+textarea:not([class*="border-"]) {
+  border-color: var(--border-default);
+}
+
+input:not([class*="bg-"]),
+select:not([class*="bg-"]),
+textarea:not([class*="bg-"]) {
+  background: var(--surface-primary);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 1;
+}
+
+::selection {
+  background: var(--brand-champagne-500);
+  color: var(--brand-navy-900);
+}
+
+.skip-link {
+  position: fixed;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: 100;
+  min-height: 2.75rem;
+  padding: var(--space-3) var(--space-4);
+  transform: translateY(calc(-100% - var(--space-6)));
+  border-radius: var(--shape-radius-md);
+  background: var(--surface-primary);
+  color: var(--brand-navy-900);
+  font-weight: 800;
+  transition: transform var(--motion-fast) var(--ease-standard);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.app-main {
+  min-width: 0;
+}
+
+.app-main:focus {
+  outline: none;
+}
+
+.public-footer {
+  padding-bottom: calc(
+    var(--mobile-nav-height) + env(safe-area-inset-bottom)
+  );
+}
+
+@media (min-width: 48rem) {
+  .public-footer {
+    padding-bottom: 0;
+  }
+
+  .public-footer.cabinet-mobile-nav-clearance {
+    padding-bottom: calc(
+      var(--mobile-nav-height) + env(safe-area-inset-bottom)
+    );
+  }
+}
+
+@media (min-width: 64rem) {
+  .public-footer.cabinet-mobile-nav-clearance {
+    padding-bottom: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+@keyframes vehicle-carousel-enter {
+  from {
+    opacity: 0;
+    transform: scale(1.025);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.vehicle-carousel-image {
+  animation: vehicle-carousel-enter 600ms ease-out both;
+  will-change: opacity, transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vehicle-carousel-image {
+    animation: none;
+  }
+}

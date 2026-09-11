@@ -1,0 +1,22 @@
+{
+  "short_name": "TezAuksion",
+  "name": "TezAuksion",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "type": "image/png",
+      "sizes": "1254x1254",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/brand.png",
+      "type": "image/png",
+      "sizes": "500x500",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#081B3D",
+  "background_color": "#F8F6F2"
+}
